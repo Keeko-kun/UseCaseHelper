@@ -1,2 +1,2 @@
 # UseCaseHelper
-Tralala. Nog meer geld.
+Tralala. Nog meer geld. Geld!
