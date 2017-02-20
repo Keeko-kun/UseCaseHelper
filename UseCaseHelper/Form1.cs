@@ -42,7 +42,7 @@ namespace UseCaseHelper
             }
            else
             {
-                MessageBox.Show("Please select an element. :^D");
+                MessageBox.Show("Please select an element.");
             }
         }
 
