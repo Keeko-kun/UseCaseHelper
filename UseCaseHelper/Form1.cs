@@ -70,7 +70,7 @@ namespace UseCaseHelper
             actorsLBL[newActor].Font = new Font(FontFamily.GenericSansSerif, 12, FontStyle.Regular);
             Controls.Add(actorsLBL[newActor]);
             actorsLBL[newActor].BringToFront();
-            actorsLBL[newActor].BackColor = Color.Transparent;
+            actorsLBL[newActor].BackColor = SystemColors.ControlLightLight;
         }
 
     }
