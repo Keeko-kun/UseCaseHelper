@@ -7,13 +7,19 @@ using System.Threading.Tasks;
 
 namespace UseCaseHelper
 {
-
+    public enum drawMode
+    {
+        Actor,
+        Case,
+        Line
+    }
     public class Element
     {
 
         private List<Actor> actors = new List<Actor>();
-        private List<Bitmap> images = new List<Bitmap>();
+        private List<Line> lines = new List<Line>();
         private int currentlySelected;
+        private drawMode currentMode;
 
         public Element()
         {
@@ -25,6 +31,11 @@ namespace UseCaseHelper
             actors.Add(newActor);
         }
 
+        public void AddLine(Line newLine)
+        {
+            lines.Add(newLine);
+        }
+
         public int GetActorLength
         {
             get
@@ -33,27 +44,22 @@ namespace UseCaseHelper
             }
         }
 
+        public int GetLineLength
+        {
+            get
+            {
+                return lines.Count;
+            }
+        }
+
         public Actor GetActor(int i)
         {
             return actors[i];
         }
 
-        public Bitmap GetBitmap()
+        public Line GetLine(int line)
         {
-            return images[currentlySelected];
-        }
-
-        public void AddImage(Bitmap newImage)
-        {
-            images.Add(newImage);
-        }
-
-        public int GetBitmapLength
-        {
-            get
-            {
-                return images.Count;
-            }
+            return lines[line];
         }
 
         public int CurrentElement
@@ -65,6 +71,22 @@ namespace UseCaseHelper
             set
             {
                 currentlySelected = value;
+            }
+        }
+
+        public string GetDrawMode
+        {
+            get
+            {
+                return currentMode.ToString();
+            }
+        }
+
+        public drawMode SetDrawMode
+        {
+            set
+            {
+                currentMode = value;
             }
         }
 

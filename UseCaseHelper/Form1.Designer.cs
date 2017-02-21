@@ -70,14 +70,15 @@
             // tsSave
             // 
             this.tsSave.Name = "tsSave";
-            this.tsSave.Size = new System.Drawing.Size(98, 22);
+            this.tsSave.Size = new System.Drawing.Size(152, 22);
             this.tsSave.Text = "Save";
             // 
             // tsQuit
             // 
             this.tsQuit.Name = "tsQuit";
-            this.tsQuit.Size = new System.Drawing.Size(98, 22);
+            this.tsQuit.Size = new System.Drawing.Size(152, 22);
             this.tsQuit.Text = "Quit";
+            this.tsQuit.Click += new System.EventHandler(this.tsQuit_Click);
             // 
             // toolStripDropDownButton2
             // 
@@ -108,8 +109,9 @@
             // tsLine
             // 
             this.tsLine.Name = "tsLine";
-            this.tsLine.Size = new System.Drawing.Size(121, 22);
+            this.tsLine.Size = new System.Drawing.Size(152, 22);
             this.tsLine.Text = "Line";
+            this.tsLine.Click += new System.EventHandler(this.tsLine_Click);
             // 
             // btnClearAll
             // 
@@ -147,6 +149,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1560, 785);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick);
             // 
             // Form1
