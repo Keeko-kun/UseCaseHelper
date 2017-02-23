@@ -37,10 +37,12 @@
             this.tsActor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsUseCase = new System.Windows.Forms.ToolStripMenuItem();
             this.tsLine = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnClearAll = new System.Windows.Forms.Button();
-            this.btnUndo = new System.Windows.Forms.Button();
+            this.btnClearAllLines = new System.Windows.Forms.Button();
+            this.btnUndoActor = new System.Windows.Forms.Button();
             this.btnList = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnUndoCase = new System.Windows.Forms.Button();
+            this.btnExitLineMode = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,31 +116,33 @@
             this.tsLine.Text = "Line";
             this.tsLine.Click += new System.EventHandler(this.tsLine_Click);
             // 
-            // btnClearAll
+            // btnClearAllLines
             // 
-            this.btnClearAll.Location = new System.Drawing.Point(12, 28);
-            this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(86, 30);
-            this.btnClearAll.TabIndex = 2;
-            this.btnClearAll.Text = "Clear All";
-            this.btnClearAll.UseVisualStyleBackColor = true;
+            this.btnClearAllLines.Location = new System.Drawing.Point(12, 28);
+            this.btnClearAllLines.Name = "btnClearAllLines";
+            this.btnClearAllLines.Size = new System.Drawing.Size(86, 30);
+            this.btnClearAllLines.TabIndex = 2;
+            this.btnClearAllLines.Text = "Clear All Lines";
+            this.btnClearAllLines.UseVisualStyleBackColor = true;
+            this.btnClearAllLines.Click += new System.EventHandler(this.btnClearAllLines_Click);
             // 
-            // btnUndo
+            // btnUndoActor
             // 
-            this.btnUndo.Location = new System.Drawing.Point(104, 28);
-            this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(86, 30);
-            this.btnUndo.TabIndex = 3;
-            this.btnUndo.Text = "Undo";
-            this.btnUndo.UseVisualStyleBackColor = true;
+            this.btnUndoActor.Location = new System.Drawing.Point(104, 28);
+            this.btnUndoActor.Name = "btnUndoActor";
+            this.btnUndoActor.Size = new System.Drawing.Size(86, 30);
+            this.btnUndoActor.TabIndex = 3;
+            this.btnUndoActor.Text = "Undo Actor";
+            this.btnUndoActor.UseVisualStyleBackColor = true;
+            this.btnUndoActor.Click += new System.EventHandler(this.btnUndoActor_Click);
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(196, 28);
+            this.btnList.Location = new System.Drawing.Point(380, 28);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(86, 30);
             this.btnList.TabIndex = 4;
-            this.btnList.Text = "Element List";
+            this.btnList.Text = "Place Element";
             this.btnList.UseVisualStyleBackColor = true;
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
@@ -153,14 +157,36 @@
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick);
             // 
+            // btnUndoCase
+            // 
+            this.btnUndoCase.Location = new System.Drawing.Point(196, 28);
+            this.btnUndoCase.Name = "btnUndoCase";
+            this.btnUndoCase.Size = new System.Drawing.Size(86, 30);
+            this.btnUndoCase.TabIndex = 5;
+            this.btnUndoCase.Text = "Undo Case";
+            this.btnUndoCase.UseVisualStyleBackColor = true;
+            this.btnUndoCase.Click += new System.EventHandler(this.btnUndoCase_Click);
+            // 
+            // btnExitLineMode
+            // 
+            this.btnExitLineMode.Location = new System.Drawing.Point(288, 28);
+            this.btnExitLineMode.Name = "btnExitLineMode";
+            this.btnExitLineMode.Size = new System.Drawing.Size(86, 30);
+            this.btnExitLineMode.TabIndex = 6;
+            this.btnExitLineMode.Text = "Exit Line Mode";
+            this.btnExitLineMode.UseVisualStyleBackColor = true;
+            this.btnExitLineMode.Click += new System.EventHandler(this.btnExitLineMode_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.Controls.Add(this.btnExitLineMode);
+            this.Controls.Add(this.btnUndoCase);
             this.Controls.Add(this.btnList);
-            this.Controls.Add(this.btnUndo);
-            this.Controls.Add(this.btnClearAll);
+            this.Controls.Add(this.btnUndoActor);
+            this.Controls.Add(this.btnClearAllLines);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
@@ -182,10 +208,12 @@
         private System.Windows.Forms.ToolStripMenuItem tsActor;
         private System.Windows.Forms.ToolStripMenuItem tsUseCase;
         private System.Windows.Forms.ToolStripMenuItem tsLine;
-        private System.Windows.Forms.Button btnClearAll;
-        private System.Windows.Forms.Button btnUndo;
+        private System.Windows.Forms.Button btnClearAllLines;
+        private System.Windows.Forms.Button btnUndoActor;
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnUndoCase;
+        private System.Windows.Forms.Button btnExitLineMode;
     }
 }
 

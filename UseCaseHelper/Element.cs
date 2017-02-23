@@ -42,6 +42,12 @@ namespace UseCaseHelper
             lines.Add(newLine);
         }
 
+        public void ClearLines()
+        {
+            lines.Clear();
+        }
+
+
         public UseCase GetCase(int i)
         {
             return usecase[i];

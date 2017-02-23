@@ -81,12 +81,7 @@ namespace UseCaseHelper
             actorsPB[newActor].BringToFront();
             actorsPB[newActor].Click += (s, e) => 
             {
-                if (elementManager.GetDrawMode == "Actor")
-                {
-                    View_Actor viewActor = new View_Actor(actor);
-                    viewActor.Show();
-                }
-                else if (elementManager.GetDrawMode == "Line")
+                if (elementManager.GetDrawMode == "Line")
                 {
                     if (points == 0)
                     {
@@ -98,11 +93,16 @@ namespace UseCaseHelper
                     {
                         lineX2 = actorsPB[newActor].Location.X + 75;
                         lineY2 = actorsPB[newActor].Location.Y;
-                        elementManager.AddLine(new Line(lineX1,lineY1,lineX2,lineY2));
+                        elementManager.AddLine(new Line(lineX1, lineY1, lineX2, lineY2));
                         this.Invalidate();
                         panel1.Invalidate();
                         points = 0;
                     }
+                }
+                else
+                {
+                    View_Actor viewActor = new View_Actor(actor);
+                    viewActor.Show();
                 }
             };
 
@@ -130,28 +130,28 @@ namespace UseCaseHelper
             casePB[newCase].BringToFront();
             casePB[newCase].Click += (s, e) =>
             {
-                if (elementManager.GetDrawMode == "Case")
-                {
-                    View_Use_Case viewCase = new View_Use_Case(newUseCase);
-                    viewCase.Show();
-                }
-                else if (elementManager.GetDrawMode == "Line")
+                if (elementManager.GetDrawMode == "Line")
                 {
                     if (points == 0)
                     {
-                        lineX1 = casePB[newCase].Location.X + 75;
+                        lineX1 = casePB[newCase].Location.X + 125;
                         lineY1 = casePB[newCase].Location.Y;
                         points++;
                     }
                     else if (points == 1)
                     {
-                        lineX2 = casePB[newCase].Location.X + 75;
+                        lineX2 = casePB[newCase].Location.X + 125;
                         lineY2 = casePB[newCase].Location.Y;
                         elementManager.AddLine(new Line(lineX1, lineY1, lineX2, lineY2));
                         this.Invalidate();
                         panel1.Invalidate();
                         points = 0;
                     }
+                }
+                else
+                {
+                    View_Use_Case viewCase = new View_Use_Case(newUseCase);
+                    viewCase.Show();
                 }
             };
 
@@ -169,12 +169,7 @@ namespace UseCaseHelper
             caseLBL[newCase].BackColor = SystemColors.ControlLightLight;
             caseLBL[newCase].Click += (s, e) =>
              {
-                 if (elementManager.GetDrawMode == "Case")
-                 {
-                     View_Use_Case viewCase = new View_Use_Case(newUseCase);
-                     viewCase.Show();
-                 }
-                 else if (elementManager.GetDrawMode == "Line")
+                 if (elementManager.GetDrawMode == "Line")
                  {
                      if (points == 0)
                      {
@@ -191,6 +186,11 @@ namespace UseCaseHelper
                          panel1.Invalidate();
                          points = 0;
                      }
+                 }
+                 else
+                 {
+                     View_Use_Case viewCase = new View_Use_Case(newUseCase);
+                     viewCase.Show();
                  }
              };
 
@@ -223,5 +223,37 @@ namespace UseCaseHelper
             createUseCase.ShowDialog();
         }
 
+        private void btnExitLineMode_Click(object sender, EventArgs e)
+        {
+            elementManager.SetDrawMode = drawMode.Actor;
+            elementManager.CurrentElement = -1;
+        }
+
+        private void btnClearAllLines_Click(object sender, EventArgs e)
+        {
+            elementManager.ClearLines();
+            this.Invalidate();
+            panel1.Invalidate();
+        }
+
+        private void btnUndoActor_Click(object sender, EventArgs e)
+        {
+            if (actorsPB.Count > 0)
+            {
+                Controls.Remove(actorsPB[actorsPB.Count - 1]);
+                Controls.Remove(actorsLBL[actorsLBL.Count - 1]);
+                actorsPB.Remove(actorsPB[actorsPB.Count - 1]);
+                actorsLBL.Remove(actorsLBL[actorsLBL.Count - 1]);
+            }
+
+        }
+
+        private void btnUndoCase_Click(object sender, EventArgs e)
+        {
+            Controls.Remove(casePB[casePB.Count - 1]);
+            Controls.Remove(caseLBL[caseLBL.Count - 1]);
+            casePB.Remove(casePB[casePB.Count - 1]);
+            caseLBL.Remove(caseLBL[caseLBL.Count - 1]);
+        }
     }
 }
