@@ -18,12 +18,18 @@ namespace UseCaseHelper
 
         private List<Actor> actors = new List<Actor>();
         private List<Line> lines = new List<Line>();
+        private List<UseCase> usecase = new List<UseCase>();
         private int currentlySelected;
         private drawMode currentMode;
 
         public Element()
         {
 
+        }
+
+        public void AddCase (UseCase newCase)
+        {
+            usecase.Add(newCase);
         }
 
         public void AddActor(Actor newActor)
@@ -34,6 +40,11 @@ namespace UseCaseHelper
         public void AddLine(Line newLine)
         {
             lines.Add(newLine);
+        }
+
+        public UseCase GetCase(int i)
+        {
+            return usecase[i];
         }
 
         public int GetActorLength

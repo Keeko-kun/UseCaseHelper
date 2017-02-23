@@ -76,6 +76,7 @@
             this.rbActor.TabStop = true;
             this.rbActor.Text = "Actor";
             this.rbActor.UseVisualStyleBackColor = true;
+            this.rbActor.CheckedChanged += new System.EventHandler(this.rbActor_CheckedChanged);
             // 
             // rbCase
             // 
@@ -87,6 +88,7 @@
             this.rbCase.TabStop = true;
             this.rbCase.Text = "Use Case";
             this.rbCase.UseVisualStyleBackColor = true;
+            this.rbCase.CheckedChanged += new System.EventHandler(this.rbCase_CheckedChanged);
             // 
             // Element_List
             // 

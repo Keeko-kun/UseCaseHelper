@@ -55,7 +55,10 @@ namespace UseCaseHelper
             }
             else if (elementManager.GetDrawMode == "Case")
             {
-
+                if (elementManager.CurrentElement != -1)
+                {
+                    CreateCase(e.X, e.Y, elementManager.GetCase(elementManager.CurrentElement));
+                }
             }
             else if (elementManager.GetDrawMode == "Line")
             {
@@ -110,6 +113,11 @@ namespace UseCaseHelper
             Controls.Add(actorsLBL[newActor]);
             actorsLBL[newActor].BringToFront();
             actorsLBL[newActor].BackColor = SystemColors.ControlLightLight;
+        }
+
+        private void CreateCase (int corX, int corY, UseCase newUseCase)
+        {
+
         }
 
         private void tsQuit_Click(object sender, EventArgs e)

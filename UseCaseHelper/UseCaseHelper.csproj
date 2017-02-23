@@ -69,6 +69,7 @@
     <Compile Include="Line.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UseCase.cs" />
     <Compile Include="View Actor.cs">
       <SubType>Form</SubType>
     </Compile>

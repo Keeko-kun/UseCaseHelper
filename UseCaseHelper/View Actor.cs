@@ -12,9 +12,6 @@ namespace UseCaseHelper
 {
     public partial class View_Actor : Form
     {
-
-        string s = "";
-
         public View_Actor(Actor actor)
         {
             InitializeComponent();
