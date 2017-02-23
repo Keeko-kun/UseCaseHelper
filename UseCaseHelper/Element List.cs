@@ -65,10 +65,10 @@ namespace UseCaseHelper
         private void rbCase_CheckedChanged(object sender, EventArgs e)
         {
             lbList.Items.Clear();
-            //for (int i = 0; i <= elementManager.GetActorLength - 1; i++)
-            //{
-            //    lbList.Items.Add(elementManager.GetActor(i));
-            //}
+            for (int i = 0; i <= elementManager.GetCaseLength - 1; i++)
+            {
+                lbList.Items.Add(elementManager.GetCase(i));
+            }
         }
     }
 }

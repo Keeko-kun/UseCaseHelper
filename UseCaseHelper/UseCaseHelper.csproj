@@ -53,6 +53,12 @@
     <Compile Include="Create Actor.Designer.cs">
       <DependentUpon>Create Actor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Create Use Case.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create Use Case.Designer.cs">
+      <DependentUpon>Create Use Case.cs</DependentUpon>
+    </Compile>
     <Compile Include="Element List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <EmbeddedResource Include="Create Actor.resx">
       <DependentUpon>Create Actor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Use Case.resx">
+      <DependentUpon>Create Use Case.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Element List.resx">
       <DependentUpon>Element List.cs</DependentUpon>

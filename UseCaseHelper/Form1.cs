@@ -140,5 +140,11 @@ namespace UseCaseHelper
             elementManager.SetDrawMode = drawMode.Line;
             MessageBox.Show("Line mode enabled.\nSelect two elements to draw a line in between.");
         }
+
+        private void tsUseCase_Click(object sender, EventArgs e)
+        {
+            Create_Use_Case createUseCase = new Create_Use_Case(elementManager);
+            createUseCase.ShowDialog();
+        }
     }
 }

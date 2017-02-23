@@ -55,6 +55,14 @@ namespace UseCaseHelper
             }
         }
 
+        public int GetCaseLength
+        {
+            get
+            {
+                return usecase.Count;
+            }
+        }
+
         public int GetLineLength
         {
             get

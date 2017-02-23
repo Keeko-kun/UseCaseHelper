@@ -70,13 +70,13 @@
             // tsSave
             // 
             this.tsSave.Name = "tsSave";
-            this.tsSave.Size = new System.Drawing.Size(152, 22);
+            this.tsSave.Size = new System.Drawing.Size(98, 22);
             this.tsSave.Text = "Save";
             // 
             // tsQuit
             // 
             this.tsQuit.Name = "tsQuit";
-            this.tsQuit.Size = new System.Drawing.Size(152, 22);
+            this.tsQuit.Size = new System.Drawing.Size(98, 22);
             this.tsQuit.Text = "Quit";
             this.tsQuit.Click += new System.EventHandler(this.tsQuit_Click);
             // 
@@ -96,15 +96,16 @@
             // tsActor
             // 
             this.tsActor.Name = "tsActor";
-            this.tsActor.Size = new System.Drawing.Size(121, 22);
+            this.tsActor.Size = new System.Drawing.Size(152, 22);
             this.tsActor.Text = "Actor";
             this.tsActor.Click += new System.EventHandler(this.tsActor_Click);
             // 
             // tsUseCase
             // 
             this.tsUseCase.Name = "tsUseCase";
-            this.tsUseCase.Size = new System.Drawing.Size(121, 22);
+            this.tsUseCase.Size = new System.Drawing.Size(152, 22);
             this.tsUseCase.Text = "Use Case";
+            this.tsUseCase.Click += new System.EventHandler(this.tsUseCase_Click);
             // 
             // tsLine
             // 
