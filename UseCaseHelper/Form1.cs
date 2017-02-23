@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace UseCaseHelper
 {
@@ -17,6 +19,9 @@ namespace UseCaseHelper
         List<Label> actorsLBL = new List<Label>();
         List<PictureBox> casePB = new List<PictureBox>();
         List<Label> caseLBL = new List<Label>();
+
+        SaveFileDialog saveImg = new SaveFileDialog();
+        SaveFileDialog saveTxt = new SaveFileDialog();
 
         int points = 0;
         int lineX1;
@@ -79,7 +84,7 @@ namespace UseCaseHelper
             actorsPB[newActor].BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(actorsPB[newActor]);
             actorsPB[newActor].BringToFront();
-            actorsPB[newActor].Click += (s, e) => 
+            actorsPB[newActor].Click += (s, e) =>
             {
                 if (elementManager.GetDrawMode == "Line")
                 {
@@ -117,7 +122,7 @@ namespace UseCaseHelper
             actorsLBL[newActor].BackColor = SystemColors.ControlLightLight;
         }
 
-        private void CreateCase (int corX, int corY, UseCase newUseCase)
+        private void CreateCase(int corX, int corY, UseCase newUseCase)
         {
             casePB.Add(new PictureBox());
             int newCase = casePB.Count - 1;
@@ -250,10 +255,76 @@ namespace UseCaseHelper
 
         private void btnUndoCase_Click(object sender, EventArgs e)
         {
-            Controls.Remove(casePB[casePB.Count - 1]);
-            Controls.Remove(caseLBL[caseLBL.Count - 1]);
-            casePB.Remove(casePB[casePB.Count - 1]);
-            caseLBL.Remove(caseLBL[caseLBL.Count - 1]);
+            if (casePB.Count > 0)
+            {
+                Controls.Remove(casePB[casePB.Count - 1]);
+                Controls.Remove(caseLBL[caseLBL.Count - 1]);
+                casePB.Remove(casePB[casePB.Count - 1]);
+                caseLBL.Remove(caseLBL[caseLBL.Count - 1]);
+            }
+        }
+
+        private void tsSave_Click(object sender, EventArgs e)
+        {
+            Control c = panel1;
+            Point p = c.PointToScreen(Point.Empty);
+            Bitmap bmp = new Bitmap(c.Width, c.Height);
+            Graphics g = Graphics.FromImage(bmp);
+            g.CopyFromScreen(p, Point.Empty, bmp.Size, CopyPixelOperation.SourceCopy);
+            bmp.Save($"C:/Users/" + Environment.UserName + $"/Pictures/UseCaseDiagram.jpg");
+
+            List<string> allText = new List<string>();
+
+            for (int i = 0; i < elementManager.GetActorLength; i++)
+            {
+                Actor actor = elementManager.GetActor(i);
+                allText.Add("~Actor~");
+                allText.Add("~Name:");
+                allText.Add(actor.GetName);
+                allText.Add("~Description:");
+                foreach (string s in actor.GetDescription)
+                {
+                    allText.Add(s);
+                }
+                allText.Add("\r\n");
+            }
+            allText.Add("\r\n");
+            for (int i = 0; i < elementManager.GetCaseLength; i++)
+            {
+                UseCase usecase = elementManager.GetCase(i);
+                allText.Add("~Use Case~");
+                allText.Add("~Name:");
+                allText.Add(usecase.GetName);
+                allText.Add("~Summary:");
+                allText.Add(usecase.GetSummary);
+                allText.Add("~Actors:");
+                foreach (string s in usecase.GetActors)
+                {
+                    allText.Add(s);
+                }
+                allText.Add("~Preconditions:");
+                foreach (string s in usecase.GetPrecondition)
+                {
+                    allText.Add(s);
+                }
+                allText.Add("~Basic Flow:");
+                foreach (string s in usecase.GetFlow)
+                {
+                    allText.Add(s);
+                }
+                allText.Add("~Exceptions:");
+                foreach (string s in usecase.GetActors)
+                {
+                    allText.Add(s);
+                }
+                allText.Add("~Postcondition:");
+                allText.Add(usecase.GetPostcondition);
+                allText.Add("\r\n");
+
+
+                File.WriteAllLines($"C:/Users/" + Environment.UserName + $"/Pictures/UseCaseDiagram_Data.txt", allText);
+            }
+            MessageBox.Show("All files saved in " + $"C:/Users/" + Environment.UserName + $"/Pictures");
         }
     }
 }

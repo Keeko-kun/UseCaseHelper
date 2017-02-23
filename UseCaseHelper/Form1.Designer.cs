@@ -72,13 +72,14 @@
             // tsSave
             // 
             this.tsSave.Name = "tsSave";
-            this.tsSave.Size = new System.Drawing.Size(98, 22);
+            this.tsSave.Size = new System.Drawing.Size(152, 22);
             this.tsSave.Text = "Save";
+            this.tsSave.Click += new System.EventHandler(this.tsSave_Click);
             // 
             // tsQuit
             // 
             this.tsQuit.Name = "tsQuit";
-            this.tsQuit.Size = new System.Drawing.Size(98, 22);
+            this.tsQuit.Size = new System.Drawing.Size(152, 22);
             this.tsQuit.Text = "Quit";
             this.tsQuit.Click += new System.EventHandler(this.tsQuit_Click);
             // 
