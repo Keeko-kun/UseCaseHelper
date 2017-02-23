@@ -16,18 +16,7 @@ namespace UseCaseHelper
         {
             InitializeComponent();
             tbName.Text = actor.GetName;
-            for (int i = 0; i < actor.GetDescription.Length; i++)
-            {
-                if (i == 0)
-                {
-                    tbDescription.Text += actor.GetDescription[i];
-                }
-                else
-                {
-                    tbDescription.Text += "\r\n";
-                    tbDescription.Text += actor.GetDescription[i];
-                }
-            }
+            tbDescription.Lines = actor.GetDescription;
         }
     }
 }

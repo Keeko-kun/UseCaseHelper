@@ -15,6 +15,8 @@ namespace UseCaseHelper
         Element elementManager = new Element();
         List<PictureBox> actorsPB = new List<PictureBox>();
         List<Label> actorsLBL = new List<Label>();
+        List<PictureBox> casePB = new List<PictureBox>();
+        List<Label> caseLBL = new List<Label>();
 
         int points = 0;
         int lineX1;
@@ -74,7 +76,7 @@ namespace UseCaseHelper
             actorsPB[newActor].BackColor = SystemColors.ControlLightLight;
             actorsPB[newActor].Location = new System.Drawing.Point(corX - 75, corY);
             actorsPB[newActor].Size = new System.Drawing.Size(150, 150);
-            actorsPB[newActor].BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            actorsPB[newActor].BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(actorsPB[newActor]);
             actorsPB[newActor].BringToFront();
             actorsPB[newActor].Click += (s, e) => 
@@ -117,6 +119,80 @@ namespace UseCaseHelper
 
         private void CreateCase (int corX, int corY, UseCase newUseCase)
         {
+            casePB.Add(new PictureBox());
+            int newCase = casePB.Count - 1;
+            casePB[newCase].BackgroundImage = Properties.Resources._2000px_Circle___black_simple_svg;
+            casePB[newCase].BackColor = SystemColors.ControlLightLight;
+            casePB[newCase].Location = new System.Drawing.Point(corX - 200, corY);
+            casePB[newCase].Size = new System.Drawing.Size(432, 115);
+            casePB[newCase].BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(casePB[newCase]);
+            casePB[newCase].BringToFront();
+            casePB[newCase].Click += (s, e) =>
+            {
+                if (elementManager.GetDrawMode == "Case")
+                {
+                    View_Use_Case viewCase = new View_Use_Case(newUseCase);
+                    viewCase.Show();
+                }
+                else if (elementManager.GetDrawMode == "Line")
+                {
+                    if (points == 0)
+                    {
+                        lineX1 = casePB[newCase].Location.X + 75;
+                        lineY1 = casePB[newCase].Location.Y;
+                        points++;
+                    }
+                    else if (points == 1)
+                    {
+                        lineX2 = casePB[newCase].Location.X + 75;
+                        lineY2 = casePB[newCase].Location.Y;
+                        elementManager.AddLine(new Line(lineX1, lineY1, lineX2, lineY2));
+                        this.Invalidate();
+                        panel1.Invalidate();
+                        points = 0;
+                    }
+                }
+            };
+
+            caseLBL.Add(new Label());
+            caseLBL[newCase].AutoSize = false;
+            caseLBL[newCase].Anchor = System.Windows.Forms.AnchorStyles.None;
+            caseLBL[newCase].Location = new System.Drawing.Point(corX - 150, corY + 45);
+            caseLBL[newCase].TabIndex = 1;
+            caseLBL[newCase].Text = newUseCase.GetName;
+            caseLBL[newCase].Font = new Font(FontFamily.GenericSansSerif, 12, FontStyle.Regular);
+            caseLBL[newCase].Size = new System.Drawing.Size(332, 23);
+            caseLBL[newCase].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            Controls.Add(caseLBL[newCase]);
+            caseLBL[newCase].BringToFront();
+            caseLBL[newCase].BackColor = SystemColors.ControlLightLight;
+            caseLBL[newCase].Click += (s, e) =>
+             {
+                 if (elementManager.GetDrawMode == "Case")
+                 {
+                     View_Use_Case viewCase = new View_Use_Case(newUseCase);
+                     viewCase.Show();
+                 }
+                 else if (elementManager.GetDrawMode == "Line")
+                 {
+                     if (points == 0)
+                     {
+                         lineX1 = casePB[newCase].Location.X + 125;
+                         lineY1 = casePB[newCase].Location.Y;
+                         points++;
+                     }
+                     else if (points == 1)
+                     {
+                         lineX2 = casePB[newCase].Location.X + 125;
+                         lineY2 = casePB[newCase].Location.Y;
+                         elementManager.AddLine(new Line(lineX1, lineY1, lineX2, lineY2));
+                         this.Invalidate();
+                         panel1.Invalidate();
+                         points = 0;
+                     }
+                 }
+             };
 
         }
 
@@ -146,5 +222,6 @@ namespace UseCaseHelper
             Create_Use_Case createUseCase = new Create_Use_Case(elementManager);
             createUseCase.ShowDialog();
         }
+
     }
 }

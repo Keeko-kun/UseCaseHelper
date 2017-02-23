@@ -29,6 +29,62 @@ namespace UseCaseHelper
             this.postcondition = postcondition;
         }
 
+        public string GetName
+        {
+            get
+            {
+                return name;
+            }
+        }
+    
+        public string GetSummary
+        {
+            get
+            {
+                return summary;
+            }
+        }
+
+        public string[] GetActors
+        {
+            get
+            {
+                return actors;
+            }
+        }
+
+        public string[] GetPrecondition
+        {
+            get
+            {
+                return precondition;
+            }
+        }
+
+        public string[] GetFlow
+        {
+            get
+            {
+                return flow;
+            }
+        }
+
+        public string[] GetExceptions
+        {
+            get
+            {
+                return exception;
+            }
+        }
+
+        public string GetPostcondition
+        {
+            get
+            {
+                return postcondition;
+            }
+        }
+
         public override string ToString()
         {
             return $"Use Case: {name}";

@@ -96,21 +96,21 @@
             // tsActor
             // 
             this.tsActor.Name = "tsActor";
-            this.tsActor.Size = new System.Drawing.Size(152, 22);
+            this.tsActor.Size = new System.Drawing.Size(121, 22);
             this.tsActor.Text = "Actor";
             this.tsActor.Click += new System.EventHandler(this.tsActor_Click);
             // 
             // tsUseCase
             // 
             this.tsUseCase.Name = "tsUseCase";
-            this.tsUseCase.Size = new System.Drawing.Size(152, 22);
+            this.tsUseCase.Size = new System.Drawing.Size(121, 22);
             this.tsUseCase.Text = "Use Case";
             this.tsUseCase.Click += new System.EventHandler(this.tsUseCase_Click);
             // 
             // tsLine
             // 
             this.tsLine.Name = "tsLine";
-            this.tsLine.Size = new System.Drawing.Size(152, 22);
+            this.tsLine.Size = new System.Drawing.Size(121, 22);
             this.tsLine.Text = "Line";
             this.tsLine.Click += new System.EventHandler(this.tsLine_Click);
             // 

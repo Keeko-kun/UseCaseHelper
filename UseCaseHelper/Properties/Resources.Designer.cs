@@ -73,6 +73,16 @@ namespace UseCaseHelper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2000px_Circle___black_simple_svg {
+            get {
+                object obj = ResourceManager.GetObject("2000px-Circle_-_black_simple.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap stick_man_by_minimoko94_d2zvfn8 {
             get {
                 object obj = ResourceManager.GetObject("stick_man_by_minimoko94-d2zvfn8", resourceCulture);

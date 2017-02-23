@@ -82,6 +82,12 @@
     <Compile Include="View Actor.Designer.cs">
       <DependentUpon>View Actor.cs</DependentUpon>
     </Compile>
+    <Compile Include="View Use Case.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View Use Case.Designer.cs">
+      <DependentUpon>View Use Case.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Create Actor.resx">
       <DependentUpon>Create Actor.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +113,9 @@
     <EmbeddedResource Include="View Actor.resx">
       <DependentUpon>View Actor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View Use Case.resx">
+      <DependentUpon>View Use Case.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -125,6 +134,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\stick_man_by_minimoko94-d2zvfn8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2000px-Circle_-_black_simple.svg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
