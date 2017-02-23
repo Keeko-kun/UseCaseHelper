@@ -78,22 +78,24 @@ namespace UseCaseHelper
             {
                 if (elementManager.GetDrawMode == "Actor")
                 {
-                    MessageBox.Show(actor.GetName);
+                    View_Actor viewActor = new View_Actor(actor);
+                    viewActor.Show();
                 }
                 else if (elementManager.GetDrawMode == "Line")
                 {
                     if (points == 0)
                     {
-                        lineX1 = actorsPB[newActor].PointToScreen(Point.Empty).X - 80;
-                        lineY1 = actorsPB[newActor].PointToScreen(Point.Empty).Y - 75;
+                        lineX1 = actorsPB[newActor].Location.X + 75;
+                        lineY1 = actorsPB[newActor].Location.Y;
                         points++;
                     }
                     else if (points == 1)
                     {
-                        lineX2 = actorsPB[newActor].PointToScreen(Point.Empty).X - 80;
-                        lineY2 = actorsPB[newActor].PointToScreen(Point.Empty).Y - 75;
+                        lineX2 = actorsPB[newActor].Location.X + 75;
+                        lineY2 = actorsPB[newActor].Location.Y;
                         elementManager.AddLine(new Line(lineX1,lineY1,lineX2,lineY2));
                         this.Invalidate();
+                        panel1.Invalidate();
                         points = 0;
                     }
                 }

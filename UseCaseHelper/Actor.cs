@@ -26,6 +26,14 @@ namespace UseCaseHelper
             }
         }
 
+        public string[] GetDescription
+        {
+            get
+            {
+                return actorDescription;
+            }
+        }
+
         public override string ToString()
         {
             return $"Actor: {actorName}";

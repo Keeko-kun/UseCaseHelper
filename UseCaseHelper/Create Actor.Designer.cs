@@ -34,6 +34,7 @@
             this.tbDescription = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
             this.pnlActor = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -43,7 +44,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Naam:";
+            this.label1.Text = "Name:";
             // 
             // tbName
             // 
@@ -58,9 +59,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Beschrijving:";
+            this.label2.Text = "Description:";
             // 
             // tbDescription
             // 
@@ -91,11 +92,21 @@
             this.pnlActor.TabIndex = 5;
             this.pnlActor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlActor_Paint);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(379, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Preview:";
+            // 
             // Create_Actor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(702, 345);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.pnlActor);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.tbDescription);
@@ -118,5 +129,6 @@
         private System.Windows.Forms.TextBox tbDescription;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Panel pnlActor;
+        private System.Windows.Forms.Label label3;
     }
 }
