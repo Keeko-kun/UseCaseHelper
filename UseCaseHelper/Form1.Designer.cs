@@ -53,7 +53,7 @@
             this.toolStripDropDownButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1584, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1264, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "tsTop";
             // 
@@ -72,14 +72,14 @@
             // tsSave
             // 
             this.tsSave.Name = "tsSave";
-            this.tsSave.Size = new System.Drawing.Size(152, 22);
+            this.tsSave.Size = new System.Drawing.Size(98, 22);
             this.tsSave.Text = "Save";
             this.tsSave.Click += new System.EventHandler(this.tsSave_Click);
             // 
             // tsQuit
             // 
             this.tsQuit.Name = "tsQuit";
-            this.tsQuit.Size = new System.Drawing.Size(152, 22);
+            this.tsQuit.Size = new System.Drawing.Size(98, 22);
             this.tsQuit.Text = "Quit";
             this.tsQuit.Click += new System.EventHandler(this.tsQuit_Click);
             // 
@@ -152,8 +152,10 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Location = new System.Drawing.Point(12, 64);
+            this.panel1.MaximumSize = new System.Drawing.Size(1240, 606);
+            this.panel1.MinimumSize = new System.Drawing.Size(1240, 606);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1560, 785);
+            this.panel1.Size = new System.Drawing.Size(1240, 606);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick);
@@ -182,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.ClientSize = new System.Drawing.Size(1264, 682);
             this.Controls.Add(this.btnExitLineMode);
             this.Controls.Add(this.btnUndoCase);
             this.Controls.Add(this.btnList);
@@ -190,6 +192,9 @@
             this.Controls.Add(this.btnClearAllLines);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1280, 720);
+            this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Use Case Helper";
